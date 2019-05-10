@@ -7,6 +7,6 @@ public class MakeChangeApp {
 			
 			//Prompt user for amount tendered, and get input
 			
-			
+			//This will take sometime to complete.
 		}
 }
