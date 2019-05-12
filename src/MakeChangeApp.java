@@ -32,81 +32,113 @@ public class MakeChangeApp {
 
 		if (tranApprov = true && tendered > productCost) {
 			total = Math.abs(productCost - tendered);
-			System.out.printf("%n$%.2f", total);
+			System.out.print("\tYour total is ");
+			System.out.printf("$%.2f", total); 
 			System.out.println("");
 
 		} else if (tranApprov = true && tendered == productCost) {
 			System.out.println("You have paid the amount in its entirety!");
 			System.out.println("Thank you for purchasing!");
 		}
-
+		System.out.println("==============================================");
 		return total;
 	}
 
 	// currencyReturned will determine how much of each denomination is returned
 	public static void currencyReturned(double total, boolean tranApprov) {
-		double rollingTotal = total;
+		double rollingTotal = total, smallChange = 0.0;
 		int placeHolder;
 
 		while (tranApprov == true && rollingTotal != 0.0) {
-			
+
 			System.out.println("Result: ");
-			
+
 			if (rollingTotal / 20 > 0) {
-			
-				placeHolder = (int)(rollingTotal / 20);
-				rollingTotal = (placeHolder * 20);
-				System.out.println(placeHolder + " Twenty");
+
+				placeHolder = (int) Math.floor((rollingTotal / 20));
+				if (placeHolder > 1) {
+					System.out.println(placeHolder + " Twenty dollar bills");
+				} else if(placeHolder == 1){
+					System.out.println(placeHolder + " a Twenty dollar bill");
+				}
+				
 				rollingTotal = rollingTotal - (placeHolder * 20);
 			}
-			if (total / 10 > 0) {
-				placeHolder = (int)(rollingTotal / 10);
-				rollingTotal = (placeHolder * 10);
-				System.out.println(placeHolder + " Ten");
+			if (rollingTotal / 10 > 0) {
+				placeHolder = (int) Math.floor((rollingTotal / 10));
+				if (placeHolder > 1) {
+					System.out.println(placeHolder + " Ten dollar bills");
+				} else if(placeHolder == 1) {
+					System.out.println(placeHolder + " a Ten dollar bill");
+				}
 				rollingTotal = rollingTotal - (placeHolder * 10);
 			}
-			if (total / 5 > 0) {
-				placeHolder = (int)(rollingTotal / 5);
-				rollingTotal = (placeHolder * 5);
-				System.out.println(placeHolder + " Five");
+			if (rollingTotal / 5 > 0) {
+				placeHolder = (int) Math.floor((rollingTotal / 5));
+				if (placeHolder > 1) {
+					System.out.println(placeHolder + " Five dollar bills");
+				} else if (placeHolder == 1) {
+					System.out.println(placeHolder + " a Five dollar bill");
+				}
 				rollingTotal = rollingTotal - (placeHolder * 5);
-				
+
 			}
-			if (total / 1 > 0) {
-				placeHolder = (int)(rollingTotal / 1);
-				rollingTotal = (placeHolder * 1);
-				System.out.println(placeHolder + " One");
+			if (rollingTotal / 1 > 0) {
+				placeHolder = (int) Math.floor((rollingTotal / 1));
+				if (placeHolder > 1) {
+					System.out.println(placeHolder + " One dollar Bills");
+				} else if (placeHolder == 1){
+					System.out.println(placeHolder + " a One dollar bill");
+				}
 				rollingTotal = rollingTotal - (placeHolder * 1);
 
 			}
-			if (total / .25 > 0) {
-				placeHolder = (int)(rollingTotal / .25);
-				rollingTotal = (placeHolder * .25);
-				System.out.println(placeHolder + " 25 Cent");
+			if (rollingTotal / .25 > 0) {
+				smallChange = Math.floor((rollingTotal / .25));
+				placeHolder = (int) smallChange;
+				if (placeHolder > 1) {
+					System.out.println(placeHolder + " Quarters");
+				} else if (placeHolder == 1){
+					System.out.println(placeHolder + " a Quarter");
+				}
 				rollingTotal = rollingTotal - (placeHolder * .25);
 
 			}
-			if (total / .10 > 0) {
-				placeHolder = (int)(rollingTotal / .10);
-				rollingTotal = (placeHolder * .10);
-				System.out.println(placeHolder + " 10 Cent");
+			if (rollingTotal / .10 > 0) {
+				smallChange = Math.floor((rollingTotal / .10));
+				placeHolder = (int) smallChange;
+				if (placeHolder > 1) {
+					System.out.println(placeHolder + " Dimes");
+				} else if (placeHolder == 1){
+					System.out.println(placeHolder + " a Dime");
+				}
 				rollingTotal = rollingTotal - (placeHolder * .10);
 
 			}
-			if (total / .05 > 0) {
-				placeHolder = (int)(rollingTotal / .05);
-				rollingTotal = (placeHolder * .05);
-				System.out.println(placeHolder + " 5 Cent");
+			if (rollingTotal / .05 > 0) {
+				smallChange = Math.floor((rollingTotal / .05));
+				placeHolder = (int) smallChange;
+				if (placeHolder > 1) {
+					System.out.println(placeHolder + " Nickles");
+				} else if (placeHolder == 1){
+					System.out.println(placeHolder + " a Nickle");
+				}
+
 				rollingTotal = rollingTotal - (placeHolder * .05);
 
 			}
-			if (total / .01 > 0) {
-				placeHolder = (int)(rollingTotal / .01);
-				rollingTotal = (placeHolder * .01);
-				System.out.println(placeHolder + " 1 Cent");
+			if (rollingTotal / .01 > 0) {
+				smallChange = (rollingTotal / .01);
+				placeHolder = (int) smallChange;
+				if (placeHolder > 1) {
+					System.out.println(placeHolder + " Pennies");
+				} else if (placeHolder == 1){
+					System.out.println(placeHolder + " a Penny");
+				}
 				rollingTotal = rollingTotal - (placeHolder * .01);
 
 			}
+			rollingTotal = 0.0;
 
 		}
 
