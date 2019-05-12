@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class MakeChangeApp {
-
+	//  give summary of main 
 	public static void main(String[] args) {
 
 		Scanner kb = new Scanner(System.in);
@@ -18,11 +18,8 @@ public class MakeChangeApp {
 		tranApprov = errorCheck(tendered, productCost);
 		total = returnCalc(tendered, productCost, tranApprov);
 
-		// Prompt user for value
 		currencyReturned(total, tranApprov);
-		// Prompt user for amount tendered, and get input
-		// This will take sometime to complete.
-
+	
 		kb.close();
 	}
 
@@ -139,7 +136,10 @@ public class MakeChangeApp {
 
 			}
 			rollingTotal = 0.0;
-
+			System.out.println("______________________________________________");
+			System.out.println("______________________________________________");
+			System.out.println("______________________________________________");
+			System.out.println("______________________________________________");
 		}
 
 	}
