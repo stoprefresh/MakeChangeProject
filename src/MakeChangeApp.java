@@ -32,7 +32,8 @@ public class MakeChangeApp {
 			
 			if (tranApprov = true && tendered > productCost) {
 				total = Math.abs(productCost - tendered);
-				System.out.printf("%n$%.2f" + total);
+				System.out.printf("%n$%.2f" , total);
+				
 			}
 			else if(tranApprov = true && tendered == productCost){
 				System.out.println("You have paid the amount in its entirety!");
@@ -61,6 +62,10 @@ public class MakeChangeApp {
 				tranApprov = true;
 				System.out.println("Thank you!");
 			}
+			System.out.println("______________________________________________");
+			System.out.println("______________________________________________");
+			System.out.println("______________________________________________");
+			System.out.println("______________________________________________");
 			
 			return tranApprov;
 		}
