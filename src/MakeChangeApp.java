@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class MakeChangeApp {
-	// give summary of main
+	// The main is where the user input and calculation methods are called.
 	public static void main(String[] args) {
 
 		Scanner kb = new Scanner(System.in);
@@ -43,7 +43,7 @@ public class MakeChangeApp {
 		System.out.println("================================================");
 		return total;
 	}
-
+   // each of the following methods calculate and pass a rolling total to determine how much of each denomination should be returned.
 	public static double twentyDollar(double total) {
 		double rollingTotal = total;
 		int placeHolder;
