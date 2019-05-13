@@ -8,15 +8,15 @@ public class MakeChangeApp {
 
 		double tendered = 0.0, productCost = 0.0, total;
 		boolean tranApprov;
-        
+
 		System.out.println("Enter the cost of a product: ");
 		productCost = kb.nextDouble();
 
 		System.out.println("Enter the amount tendered: ");
 		tendered = kb.nextDouble();
         
-        
 		tranApprov = errorCheck(tendered, productCost);
+		
 		total = returnCalc(tendered, productCost, tranApprov);
 
 		currencyReturned(total, tranApprov);

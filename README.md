@@ -17,4 +17,3 @@ This is [Skill Distillery](https://skilldistillery.com) week 1 homework.
 
 ### Lessons Learned
 *Passing multiple methods with a common value being used within.
-*
