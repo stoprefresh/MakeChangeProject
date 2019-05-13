@@ -8,15 +8,18 @@ public class MakeChangeApp {
 
 		double tendered = 0.0, productCost = 0.0, total;
 		boolean tranApprov;
-
+		do {
 		System.out.println("Enter the cost of a product: ");
 		productCost = kb.nextDouble();
 
 		System.out.println("Enter the amount tendered: ");
 		tendered = kb.nextDouble();
+		System.out.println("________________________________________________");
+		System.out.println("________________________________________________");
         
 		tranApprov = errorCheck(tendered, productCost);
-		
+		}
+		while(tranApprov == false);
 		total = returnCalc(tendered, productCost, tranApprov);
 
 		currencyReturned(total, tranApprov);
@@ -182,10 +185,9 @@ public class MakeChangeApp {
 
 			System.out.println("            Change Breakdown Results:           ");
 
-			onePenny(oneNickle(oneDime(oneQuarter(oneDollar(fiveDollar(tenDollar(twentyDollar(total))))))));
+			rollingTotal = onePenny(oneNickle(oneDime(oneQuarter(oneDollar(fiveDollar(tenDollar(twentyDollar(total))))))));
 
-			rollingTotal = 0.0;
-
+			
 			System.out.println("________________________________________________");
 			System.out.println("________________________________________________");
 			System.out.println("________________________________________________");
@@ -201,7 +203,8 @@ public class MakeChangeApp {
 		if (tendered < productCost) {
 			tranApprov = false;
 			System.out.println("Insufficient funds to complete this transaction.");
-			System.out.println("______________Exiting application_______________");
+			System.out.println("________________________________________________");
+			System.out.println("_____________Restarting Application_____________");
 			System.out.println("________________________________________________");
 		} else if (tendered >= productCost) {
 			tranApprov = true;
